@@ -1,0 +1,16 @@
+services:
+  vault:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /var/vault/data:/vault/data
+    ports:
+      - "8200:8200"
+    environment:
+      - VAULT_ADDR=http://0.0.0.0:8200
+      - VAULT_API_ADDR=http://0.0.0.0:8200
+    cap_add:
+      - IPC_LOCK
+    command: vault server -config=/vault/config/vault.json
+    restart: unless-stopped
