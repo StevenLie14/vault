@@ -1,4 +1,4 @@
-from hashicorp/vault:latest
+FROM hashicorp/vault:latest
 
 
 RUN mkdir -p /vault/config
