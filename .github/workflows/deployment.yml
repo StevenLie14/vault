@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: hostinger
+    runs-on: shin
     steps:
       - name: Checkout
         uses: actions/checkout@v4
